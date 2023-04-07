@@ -3,7 +3,7 @@ import { Item, Container } from './FeedbackOptions.styled';
 import PropTypes from 'prop-types';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  const listObjectKeys = Object.keys(options); 
+  const listObjectKeys = Object.keys(options);
 
   return (
     <Container>

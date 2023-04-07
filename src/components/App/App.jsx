@@ -11,8 +11,6 @@ const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-
-  
   const handleIncrement = value => {
     switch (value) {
       case 'good':
@@ -28,24 +26,22 @@ const App = () => {
       default:
         return;
     }
-  }
-  
+  };
+
   const countTotalFeedback = () => {
     const totalFeedback = good + neutral + bad;
     return totalFeedback;
   };
 
   const countPositiveFeedbackPercentage = () =>
-    Math.round(
-      (good / countTotalFeedback()) * 100
-    );
+    Math.round((good / countTotalFeedback()) * 100);
 
   return (
     <Container>
       <Section title="Please leave feedback">
         <FeedbackOptions
           onLeaveFeedback={handleIncrement}
-          options={{good, neutral, bad}}
+          options={{ good, neutral, bad }}
         ></FeedbackOptions>
       </Section>
       <Section title="Statistics">

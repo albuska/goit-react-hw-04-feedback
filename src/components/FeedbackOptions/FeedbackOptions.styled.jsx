@@ -8,7 +8,7 @@ export const Container = styled.div`
 `;
 
 export const Item = styled.button`
-display: block;
+  display: block;
   width: 70px;
   padding: 5px;
   background-color: #6b8e23;
