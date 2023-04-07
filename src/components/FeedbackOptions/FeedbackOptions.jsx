@@ -8,13 +8,13 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   const listObjectKeys = Object.keys(options); 
   console.log("🚀 ~ FeedbackOptions ~ listObjectKeys:", listObjectKeys)
   return (
-    <>
+    <Container>
       {listObjectKeys.map(item => (
         <Item onClick={onLeaveFeedback(options)} key={item}>
           {item[0].toUpperCase() + item.slice(1)}
         </Item>
       ))}
-    </>
+    </Container>
   );
 };
 
