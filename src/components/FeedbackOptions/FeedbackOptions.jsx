@@ -1,24 +1,26 @@
 import React from 'react';
-import { Item, List } from './FeedbackOptions.styled';
+import { Item, Container } from './FeedbackOptions.styled';
 import PropTypes from 'prop-types';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+  console.log(onLeaveFeedback(options))
+  console.log(options)
+  const listObjectKeys = Object.keys(options); 
+  console.log("🚀 ~ FeedbackOptions ~ listObjectKeys:", listObjectKeys)
   return (
-    <div>
-      <List>
-        {options.map(item => (
-          <Item onClick={onLeaveFeedback} key={item}>
-            {item[0].toUpperCase() + item.slice(1)}
-          </Item>
-        ))}
-      </List>
-    </div>
+    <>
+      {listObjectKeys.map(item => (
+        <Item onClick={onLeaveFeedback(options)} key={item}>
+          {item[0].toUpperCase() + item.slice(1)}
+        </Item>
+      ))}
+    </>
   );
 };
 
 export default FeedbackOptions;
 
 FeedbackOptions.propTypes = {
-  onLeaveFeedback: PropTypes.func.isRequired,
-  options: PropTypes.array.isRequired,
+  // onLeaveFeedback: PropTypes.func.isRequired,
+  options: PropTypes.object.isRequired,
 };

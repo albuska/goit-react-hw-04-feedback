@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
-export const List = styled.ul`
+export const Container = styled.div`
   list-style: none;
   display: flex;
   gap: 5px;
   padding-left: 0;
 `;
 
-export const Item = styled.li`
+export const Item = styled.button`
+display: block;
   width: 70px;
   padding: 5px;
   background-color: #6b8e23;
