@@ -11,9 +11,10 @@ const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const handleIncrement = event => {
-   console.log(event.target.value);
-    switch (event.target.value) {
+
+  
+  const handleIncrement = value => {
+    switch (value) {
       case 'good':
         setGood(prevState => prevState + 1);
         break;
@@ -27,39 +28,15 @@ const App = () => {
       default:
         return;
     }
-  };
-  
-  // const handleIncrement = value => {
-  //   switch (value) {
-  //     case 'good':
-  //       setGood(prevState => prevState + 1);
-  //       break;
-  //     case 'neutral':
-  //       setNeutral(prevState => prevState + 1);
-  //       break;
-  //     case 'bad':
-  //       setBad(prevState => prevState + 1);
-  //       break;
-
-  //     default:
-  //       return;
-  //   }
-  // }
+  }
   
   const countTotalFeedback = () => {
     const totalFeedback = good + neutral + bad;
     return totalFeedback;
   };
-  // Object.values(this.state).reduce((acc, value) => acc + value, 0);
-  // useEffect(() => {
-
-  console.log(countTotalFeedback());
 
   const countPositiveFeedbackPercentage = () =>
     Math.round(
-      // (good /
-      //   Object.values(this.state).reduce((acc, value) => acc + value, 0)) *
-      //   100
       (good / countTotalFeedback()) * 100
     );
 

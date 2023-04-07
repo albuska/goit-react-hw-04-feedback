@@ -3,14 +3,12 @@ import { Item, Container } from './FeedbackOptions.styled';
 import PropTypes from 'prop-types';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  console.log(onLeaveFeedback(options))
-  console.log(options)
   const listObjectKeys = Object.keys(options); 
-  console.log("🚀 ~ FeedbackOptions ~ listObjectKeys:", listObjectKeys)
+
   return (
     <Container>
       {listObjectKeys.map(item => (
-        <Item onClick={onLeaveFeedback(options)} key={item}>
+        <Item onClick={() => onLeaveFeedback(item)} key={item}>
           {item[0].toUpperCase() + item.slice(1)}
         </Item>
       ))}
@@ -21,6 +19,6 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 export default FeedbackOptions;
 
 FeedbackOptions.propTypes = {
-  // onLeaveFeedback: PropTypes.func.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
   options: PropTypes.object.isRequired,
 };
